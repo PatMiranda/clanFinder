@@ -97,7 +97,7 @@
             <option value="">Select Option</option>
             <option value="1">If you ever return to your homeland, you'll arrange an unfortunate accident for him</option>
             <option value="2">Never much been one for cities and politics</option>
-            <option value="3">myClass = home to offer wisdom, help, and advice for the new King</option>
+            <option value="3">Return home to offer wisdom, help, and advice for the new King</option>
             <option value="4">If the King calls upon you, your duty must be fulfilled</option>
             <option value="5">Rally your forces, restore the rightful throne with blood</option>
         </select>
@@ -338,7 +338,7 @@
                 console.log("response = " + JSON.stringify(data));
                 for(i = 0; i<data.length; i++){
                     if(data[i].class === userInput.class){
-                        $("#clan").text(data[i].name);
+                        $("#clan").append(", " + data[i].characterName);
                     }
 
                 }
