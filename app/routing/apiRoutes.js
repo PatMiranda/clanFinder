@@ -1,4 +1,4 @@
-var friendsData = require("./data/friends");
+var friendsData = require("../data/friends.js");
 var express = require("express");
 var app = express();
 var path = require("path");
@@ -15,6 +15,12 @@ module.exports = function(app) {
    
     var userInput = req.body;
     var userResponse = userInput.class;
+    for (i = 0; i < friendsData.length; i++){
+      if(friendsData[i].class === userResponse){
+        matchName = friendsData[i].name;
+      }
+    }
+    friendsData.push(userInput);
       res.json(friendsData);
     
   });

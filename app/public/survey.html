@@ -333,10 +333,18 @@
              guildName(userInput.class);
             console.log("This is the sum " + charScore);
             console.log(userInput)
-			// console.log('userInput = ' + JSON.stringify(userInput));
-			// Add user inputs to friends list
-			$.post('/api/friends', userInput)
-      		
+			
+            $.post('/api/friends', userInput).done(function(data){
+                console.log("response = " + JSON.stringify(data));
+                for(i = 0; i<data.length; i++){
+                    if(data[i].class === userInput.class){
+                        $("#clan").text(data[i].name);
+                    }
+
+                }
+                
+            })
+           
 		});
 	</script>
 </body>
