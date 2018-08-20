@@ -20,6 +20,12 @@
             color: black;
             font-family: 'Uncial Antiqua', cursive;
         }
+        #arrow{
+            width: 200px;
+        }
+        #player-image{
+            width: 200px;
+        }
         #guild-image{
             width: 200px;
             align-content: center;
@@ -211,7 +217,15 @@
   </div>
   <div id="modal1" class="modal" style="display: none">
 		<div class="modal-content">
-            <img id="guild-image">
+            <div class="row">
+                <div class="col-md-12">
+                        <img id="player-image">
+                    <img id="arrow" src="https://img.freepik.com/free-icon/move-to-next_318-80203.jpg?size=338c&ext=jpg">
+                    
+                        <img id="guild-image">
+                </div>
+            </div>
+            
             <h4>Your Guild: </h4>
             <h5 id="guild-desc"></h5>
             <hr>
@@ -296,6 +310,7 @@
             $("#modal1").css("display", "block");
             $("#your-class").text(userInput.class);
             $("#char-name").text(userInput.characterName);
+            $("#player-image").attr("src", userInput.photo.toString())
 
             function guildName (x){
                 if(x === "Assassin"){
