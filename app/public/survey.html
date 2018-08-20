@@ -353,7 +353,7 @@
                 console.log("response = " + JSON.stringify(data));
                 for(i = 0; i<data.length; i++){
                     if(data[i].class === userInput.class){
-                        $("#clan").append("Your latest arrival: " +userInput.characterName.toString() + "The Clan: " + data[i].characterName + ",");
+                        $("#clan").append( data[i].characterName + ", ");
                     }
 
                 }
